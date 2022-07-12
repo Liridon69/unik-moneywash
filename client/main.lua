@@ -63,14 +63,14 @@ AddEventHandler('unik-moneywash:client:WashProggress', function(source)
         disableMouse = false,
         disableCombat = true,
     }, {
-	animDict = "mini@repair",
-    anim = "fixing_a_ped",
+	animDict = "mp_common",
+    anim = "givetake2_a",
     flags = 16,
 	}, {}, {}, function() -- Done
-    StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
+    StopAnimTask(PlayerPedId(), "mp_common", "givetake2_a", 1.0)
     TriggerServerEvent("unik-moneywash:server:getmoney")
     end, function() -- Cancel
-    StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
+    StopAnimTask(PlayerPedId(), "mp_common", "givetake2_a", 1.0)
     QBCore.Functions.Notify("Canceled..", "error")
 end)
 end)
